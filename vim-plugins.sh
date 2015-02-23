@@ -42,6 +42,7 @@ IL_NAME=indentLine
 PL_NAME=vim-powerline
 CS_NAME=colorschemes
 PATHOGEN="https://tpo.pe/pathogen.vim"
+PWD=`pwd`
 VIM=".vim"
 VIMRC=".vimrc"
 PLUGIN=$(echo ${HOME}/${VIM}/plugin)
@@ -116,6 +117,15 @@ echo "----------------------------"
 echo
 rm -rf $BUNDLE/$CS_NAME
 git clone https://github.com/flazz/vim-colorschemes.git $BUNDLE/$CS_NAME
+
+# Fix colorsheme when you use without pathogen.
+cd $VIM
+git init 
+git remote add origin https://github.com/flazz/vim-colorschemes.git
+git fetch origin
+git checkout -b master --track origin/master # origin/master is clone's default
+git reset origin/master # or whatever commit you think is proper...
+cd $PWD
 
 echo
 echo
