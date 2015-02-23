@@ -118,8 +118,11 @@ echo
 rm -rf $BUNDLE/$CS_NAME
 git clone https://github.com/flazz/vim-colorschemes.git $BUNDLE/$CS_NAME
 
-# Fix colorsheme when you use without pathogen.
+# Fix colorsheme when you use without pathogen 
+# (error line 23).
 cd $VIM
+echo
+echo 
 git init 
 git remote add origin https://github.com/flazz/vim-colorschemes.git
 git fetch origin
