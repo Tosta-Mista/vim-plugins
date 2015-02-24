@@ -48,7 +48,7 @@ VIMRC=".vimrc"
 PLUGIN=$(echo ${HOME}/${VIM}/plugin)
 AUTOLOAD=$(echo ${HOME}/${VIM}/autoload)
 BUNDLE=$(echo ${HOME}/${VIM}/bundle)
-
+COLORSH=$(echo ${HOME}/${VIM})
 set -e
 
 # create directories if not exists
@@ -120,14 +120,13 @@ git clone https://github.com/flazz/vim-colorschemes.git $BUNDLE/$CS_NAME
 
 # Fix colorsheme when you use without pathogen 
 # (error line 23).
-cd $VIM
+cd $COLORSH
 echo
 echo 
+rm -rf .git .gitignore README.md
 git init 
 git remote add origin https://github.com/flazz/vim-colorschemes.git
-git fetch origin
-git checkout -b master --track origin/master # origin/master is clone's default
-git reset origin/master # or whatever commit you think is proper...
+git pull origin master
 cd $PWD
 
 echo
