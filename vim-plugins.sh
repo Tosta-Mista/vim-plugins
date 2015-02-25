@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# Copyright 2015 Dimitris Zlatanidis <d.zlatanidis@gmail.com>
+# Copyright 2015 Dimitris Zlatanidis <d.zlatanidis@gmail.com>,
+# José Gonçalves <jose.goncalves@dlcproduction.ch> (modification)
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
