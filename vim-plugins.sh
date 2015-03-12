@@ -92,7 +92,7 @@ echo "| Install vim python-mode |"
 echo "---------------------------"
 echo
 rm -rf $BUNDLE/$PM_NAME
-git clone git://github.com/klen/python-mode.git $BUNDLE/$PM_NAME
+git clone https://github.com/klen/python-mode.git $BUNDLE/$PM_NAME
 
 echo
 echo "----------------------"
