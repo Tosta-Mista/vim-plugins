@@ -109,7 +109,7 @@ echo "| Install vim-powerline |"
 echo "-------------------------"
 echo
 rm -rf $BUNDLE/$PL_NAME
-git clone https://github.com/Lokaltog/vim-powerline.git $BUNDLE/$PL_NAME
+git clone https://github.com/powerline/powerline.git $BUNDLE/$PL_NAME
 
 echo
 echo "----------------------------"
