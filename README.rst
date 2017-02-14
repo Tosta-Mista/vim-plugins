@@ -3,7 +3,7 @@ This is a simple bash script that installs vim plugins: python-mode, indentLine,
 - Python-mode project page: https://github.com/klen/python-mode
 - indentLine: https://github.com/Yggdroot/indentLine
 - supertab: https://github.com/ervandew/supertab
-- vim-powerline: https://github.com/Lokaltog/vim-powerline
+- vim-powerline: https://github.com/powerline/powerline
 - vim-colorschemes: https://github.com/flazz/vim-colorschemes
 
 Requirements:
