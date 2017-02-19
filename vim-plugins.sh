@@ -40,7 +40,6 @@
 PM_NAME=python-mode
 ST_NAME=supertab
 IL_NAME=indentLine
-PL_NAME=vim-powerline
 CS_NAME=colorschemes
 PATHOGEN="https://tpo.pe/pathogen.vim"
 PWD=`pwd`
@@ -50,6 +49,7 @@ PLUGIN=$(echo ${HOME}/${VIM}/plugin)
 AUTOLOAD=$(echo ${HOME}/${VIM}/autoload)
 BUNDLE=$(echo ${HOME}/${VIM}/bundle)
 COLORSH=$(echo ${HOME}/${VIM})
+PIP=$(which pip3)
 set -e
 
 # create directories if not exists
@@ -108,8 +108,14 @@ echo "-------------------------"
 echo "| Install vim-powerline |"
 echo "-------------------------"
 echo
-rm -rf $BUNDLE/$PL_NAME
-git clone https://github.com/powerline/powerline.git $BUNDLE/$PL_NAME
+apt install python3-pip python3-dev build-essential
+$PIP install --upgrade pip
+$PIP install setup-tools
+$PIP install powerline-status
+echo "set rtp+=/usr/local/lib/python3.5/dist-packages/powerline/bindings/vim/" | tee -a /etc/vim/vimrc
+echo "Install powerline fonts"
+git clone https://github.com/powerline/fonts.git
+fonts/install.sh
 
 echo
 echo "----------------------------"
