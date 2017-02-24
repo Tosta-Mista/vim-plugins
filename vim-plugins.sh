@@ -109,8 +109,8 @@ echo "| Install vim-powerline |"
 echo "-------------------------"
 echo
 apt install python3-pip python3-dev build-essential
-$PIP install --upgrade pip
-$PIP install setup-tools
+$PIP install pip
+$PIP install setuptools
 $PIP install powerline-status
 echo "set rtp+=/usr/local/lib/python3.5/dist-packages/powerline/bindings/vim/" | tee -a /etc/vim/vimrc
 echo "Install powerline fonts"
