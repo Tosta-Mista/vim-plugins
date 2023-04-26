@@ -38,6 +38,7 @@
 # awk
 
 PM_NAME=python-mode
+GO_NAME=vim-go
 ST_NAME=supertab
 IL_NAME=indentLine
 CS_NAME=colorschemes
@@ -83,58 +84,52 @@ echo
 echo "--------------------"
 echo "| Install supertab |"
 echo "--------------------"
-echo
-rm -rf $PLUGIN/$ST_NAME
+rm -rfv $PLUGIN/$ST_NAME
 git clone https://github.com/ervandew/supertab.git $PLUGIN/$ST_NAME
-
 echo
+
 echo "---------------------------"
 echo "| Install vim python-mode |"
 echo "---------------------------"
+rm -rfv $BUNDLE/$PM_NAME
+git clone --recurse-submodules https://github.com/python-mode/python-mode $BUNDLE/$PM_NAME
 echo
-rm -rf $BUNDLE/$PM_NAME
-git clone https://github.com/klen/python-mode.git $BUNDLE/$PM_NAME
 
+echo "---------------------------"
+echo "| Install vim Go plugin   |"
+echo "---------------------------"
+rm -rfv $BUNDLE/$GO_NAME
+git clone https://github.com/fatih/vim-go.git $BUNDLE/$GO_NAME
 echo
+
 echo "----------------------"
 echo "| Install indentLine |"
 echo "----------------------"
-echo
-rm -rf $BUNDLE/$IL_NAME
+rm -rfv $BUNDLE/$IL_NAME
 git clone https://github.com/Yggdroot/indentLine.git $BUNDLE/$IL_NAME
-
 echo
+
 echo "-------------------------"
 echo "| Install vim-powerline |"
 echo "-------------------------"
-echo
 sudo apt install python3-pip python3-dev build-essential
 $PIP install setuptools
 $PIP install powerline-status
 echo "set rtp+=/usr/local/lib/python3.5/dist-packages/powerline/bindings/vim/" | sudo tee -a /etc/vim/vimrc
 echo "Install powerline fonts"
-git clone https://github.com/powerline/fonts.git
-fonts/install.sh
-
+if [ -f "fonts/install.sh" ]; then
+    echo "Powerline fonts already exists."
+else 
+    git clone https://github.com/powerline/fonts.git
+    fonts/install.sh
+fi
 echo
+
 echo "----------------------------"
 echo "| Install vim-colorschemes |"
 echo "----------------------------"
-echo
 rm -rf $BUNDLE/$CS_NAME
 git clone https://github.com/flazz/vim-colorschemes.git $BUNDLE/$CS_NAME
+echo
 
-# Fix colorsheme when you use without pathogen 
-# (error line 23).
-cd $COLORSH
-echo
-echo 
-rm -rf .git .gitignore README.md
-git init 
-git remote add origin https://github.com/flazz/vim-colorschemes.git
-git pull origin master
-cd $PWD
-
-echo
-echo
 echo "Done!"
