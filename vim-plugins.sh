@@ -108,11 +108,10 @@ echo "-------------------------"
 echo "| Install vim-powerline |"
 echo "-------------------------"
 echo
-apt install python3-pip python3-dev build-essential
-$PIP install pip
+sudo apt install python3-pip python3-dev build-essential
 $PIP install setuptools
 $PIP install powerline-status
-echo "set rtp+=/usr/local/lib/python3.5/dist-packages/powerline/bindings/vim/" | tee -a /etc/vim/vimrc
+echo "set rtp+=/usr/local/lib/python3.5/dist-packages/powerline/bindings/vim/" | sudo tee -a /etc/vim/vimrc
 echo "Install powerline fonts"
 git clone https://github.com/powerline/fonts.git
 fonts/install.sh
